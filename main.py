@@ -119,11 +119,11 @@ def ses(d, extra_periods, alpha):
 
     return ses
 
-SES = SES(Data, 1, 0.4)
+SES = ses(Data, 1, 0.4)
 SES_Bias = kpi(SES)
-SES_MAPE = MAPE(SES)
-SES_MAE = MAE(SES)
-SES_RMSE = RMSE(SES)
+SES_MAPE = mape(SES)
+SES_MAE = mae(SES)
+SES_RMSE = rmse(SES)
 
 SES.index.name = 'Period'
 SES[['Demand', 'Forecast']].plot(
